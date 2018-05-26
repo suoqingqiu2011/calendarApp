@@ -1,30 +1,35 @@
-Calendar
-=================
+Projet AWS Calendar 
+========================================
+LIU BIN & LI HONGYU
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
+## Page d'acceuil
+![xgcalendar screenshot1](img/calendar1.jpg) 
+ Dans la page principle, le planning de la semaine courante apparaît sous la forme d’une grande table, avec une colonne par jour. Et découper chaque jour en 48 cases d’une demie heure chacune. La hauteur des cases est fixe. Des boutons permettent de naviguer dans les semaines. Aujourd'hui marque par la couleur orange.
+## Page Login
+![xgcalendar screenshot2](img/login.jpg) 
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+## Page d'acceuil après login
+![xgcalendar screenshot2](img/calendar2.jpg)  
 
-Find out more [about Glitch](https://glitch.com/about).
+## Ajouter des événements
+![xgcalendar screenshot2](img/event1.jpg)
+Uniquement les utilisateurs connectés ont droit de modifier le calendrier.
+## Afficher l'événement
+![xgcalendar screenshot2](img/event2.jpg)
+Les événements sont représentés avec la couleur gris pour montrer les plages horaires occupées. Quand mouseover les plages horaires occupées, il afficher le contenu de cet événement dans le gauche. Et le jour de calendrier qui est marqué par la couleur vert. 
 
+## Fonctionnement 
+  * Suposser un utilisateur ajoute des événement avec une date, une heure de début et une heure de fin 
+  * Suposser de supprimer l'événement
+  * L'utilisateur confirme
+  * Mettre à jour la base de données
+  * L'affichage l'événement d'utilisateur en cas de connecter avec succès
+  * Demander confirmation avant de supprimer
+  * Utiliser par mobile
+  
+ ## Techniques utilisés
+ * CSS
+ * JavaScript
+ * JSON
+ * Ajax
 
-Your Project -- Calendar
-------------
-
-En général,
-- rédiger `public/ajax_data.js` ,`public/calendar.js` ,`public/style.css` ,`login.html` ,`login.js` et `index.html`
-- `assets`, comme images ou musique, pour les ajouter dans notre projet
-
-Ajax et Json:
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`,`data.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
-
-Dans le console,
-- dans le fichier `package.json`, nous avons ajouté une version de mysql sur  `dependencies`
-- `pnpm install mysql` est pour installer mysql
-
-Made by [Fog Creek](https://fogcreek.com/)
--------------------
-
-\ ゜o゜)ノ
