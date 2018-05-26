@@ -28,11 +28,12 @@ db.serialize(function(){
     
     // insert default dreams
     db.serialize(function() {
-      db.run('INSERT INTO Users (name) VALUES ("Find and count some sheep"), ("Climb a really tall mountain"), ("Wash the dishes")');
+      db.run('INSERT INTO Users (name) VALUES ("a123456"), ("honyu"), ("bin")');
     });
   }
   else {
-    console.log('Database "Users" ready to go!');
+    console.log('Database "Users" ready to go!'); 
+    //db.dropDatabase();
     db.each('SELECT * from Users', function(err, row) {
       if ( row ) {
         console.log('users:', row);
