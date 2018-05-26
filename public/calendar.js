@@ -148,7 +148,7 @@ window.onload = function () {
                //判断最后一行是否全为空
                lastTr();
                //获得任务信息
-               getMission()
+               getMission();
                flag = true;
            }
        }
