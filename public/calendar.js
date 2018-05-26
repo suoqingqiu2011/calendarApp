@@ -40,6 +40,7 @@ window.onload = function () {
       showEvent(year,month,days);  
   
       showUser();
+      btnShow();
   
       function showUser(){
             //alert(window.name);
@@ -52,6 +53,17 @@ window.onload = function () {
            }
        } 
   
+      function btnShow(){
+          var uName = document.getElementById("username");
+          if(window.name == "Preview"){  //alert("123456");
+             document.getElementById("btnIn").style.display="block";
+             document.getElementById("btnOut").style.display="none"; 
+          }else{
+             document.getElementById("btnIn").style.display="none";
+             document.getElementById("btnOut").style.display="block"; 
+             window.name ="Preview";
+          } 
+      }
   
        //显示日历
        function showDate(year,month) {

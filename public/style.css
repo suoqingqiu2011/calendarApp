@@ -47,7 +47,7 @@ table td {text-align: center; border: 1px solid #ccc;}
 .prev_event {left: 10px; }
 .now_event {left: 35%; text-align:center;}
 .next_event {right: 10px;}
-.btn {width: 80px; height: 25px; top: 10px; margin-left: 60px; left:400px; position:relative; }
+.btn {width: 80px; height: 25px; top: -30px; margin-left: 60px; left:800px; position:relative; }
 
 #username {    
     width: 100px;
