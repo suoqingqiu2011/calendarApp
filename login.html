@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>Login</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/log.css">
+    <script type="text/javascript" src="/login.js"></script>
+    
+  </head>
+    <body>
+    <div class="box">
+     <h2>Login</h2>
+
+     <div class="input_box">
+      <input id="uname" type="text" name="user" placeholder="Please insert name">
+     </div>
+     <div class="input_box">
+      <input id="upass" type="password" name="psw" placeholder="Please insert password">
+     </div>
+     <div id="error_box"><br></div>
+     <div class="input_box">
+      <button type="button" class="btn btn-primary" onclick="fnLogin()">login</button>    
+      <a href="/signin"><input type="button" class="btn btn-info" name="regist" value="regist"></a>
+     </div>
+ 
+    </div>
+    </body>
+
+</html>

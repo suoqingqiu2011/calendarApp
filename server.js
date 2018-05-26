@@ -43,8 +43,21 @@ db.serialize(function(){
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
-  response.sendFile(__dirname + '/views/index.html');
+  response.sendFile(__dirname + '/index.html');
 });
+
+app.get("/login", function (request, response) {
+  response.sendFile(__dirname + '/login.html');
+});
+
+app.get("/signin", function (request, response) {
+  response.sendFile(__dirname + '/signin.html');
+});
+
+app.get("/logout", function (request, response) {
+  response.sendFile(__dirname + '/index.html');
+});
+
 
 // endpoint to get all the dreams in the database
 // currently this is the only endpoint, ie. adding dreams won't update the database

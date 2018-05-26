@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>My Calendar</title>
+    <meta name="description" content="A cool thing made with Glitch" charset="utf-8" http-equiv="X-UA-Compatible">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    
+    <script src="/calendar.js"></script>
+    <script src="/ajax_data.js"></script>
+    <script src="login.js"></script>
+    <script language="javascript">
+      /*var uName = document.getElementById("username");
+      if(window.name == "Preview"){  //alert("123456");
+         document.getElementById("btnIn").style.display="block";
+         document.getElementById("btnOut").style.display="none"; 
+      }else{
+         //document.getElementById("btnIn").style.display="none";
+         //document.getElementById("btnOut").style.display="block"; 
+        // window.name ="Preview";
+      }*/
+      
+      document.getElementById("btnIn").style.display="block";    document.getElementById("btnIn").style.value="1";
+      document.getElementById("btnOut").style.display="none"; 
+      
+    </script>
+ 
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div id="header">Calendar</div>
+    <input id="inDay" type="text" readonly="readonly">
+    <div id="username" name="loginName"></div> 
+    <a href="/login"><input type="button" class="btn btn-info" id="btnIn" name="login" value="login" ></a>
+     <a href="/logout"><input type="button" class="btn btn-info" id="btnOut" name="logout" value="logout" ></a>
+    <div id="calendar">  
+    </div>
+    <div id="infobox" style="display:none;"></div>
+    <div id="evenmnt">
+    </div>
+    
+    <div id="hidebg"></div>
+    
+</body>
+</html>

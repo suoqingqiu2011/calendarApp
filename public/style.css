@@ -1,71 +1,77 @@
-/* styles */
-/* called by your view template */
-
-* {
-  box-sizing: border-box;
+* {margin: 0; padding: 0;}
+body {font-size: 13px;}
+#header {width:100%; min-width:1120px;height:50px; font-family:"Microsoft YaHei"; font-size:25px; text-align:center; padding-top: 6px; border-bottom:1px solid #ccc;
+        background:#17a4eb linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+#calendar {width: 390px; left:2%; margin-right: 70%; position: relative;}
+#calendar h1{margin: 10px auto; position: relative;}
+#calendar .title {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background: #17a4eb;
+    margin: 10px auto;
+    margin-bottom:0;
 }
 
-body {
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
-  margin: 2em;
+#evenmnt{position: relative; left: 440px; width: 65%; margin: 0 ; top:-175px;} 
+#evenmnt .EventTitle{
+    position: relative;
+    width: 100%;
+    min-width:556px;
+    height: 50px;
+    line-height: 50px;
+    background: #17a4eb;
+    margin: 10px auto;
+    margin-bottom:0;
 }
 
-h1 {
-  font-style: italic;
-  color: #373fff;
+.today {top:5%; position: fixed;}
+.return {font-size:20px; background: #00BBFF; margin-left:15px; text-align:center; padding-right: 10px; border: 2px solid #ccc;}
+.txt { position: relative; height: 200px; width: 500px; margin-top:50px; }
+.title div {position: absolute;}
+.prev {left: 10px; }
+.now {left: 35%; text-align:center;}
+.next {right: 10px;}
+.red {background-color:red;}
+.lightblue {background-color:#CCFFFF;}
+.lightred {background-color:#FFc8B4;}
+#inDay {height: 30px;width: 300px; left: 390px; position: relative; top:10px; margin:10px;}
+table {width: 100%; border-collapse: collapse;}
+.EventTab { min-width:556px; }
+table th {border: 1px solid #ccc;}
+table td {text-align: center; border: 1px solid #ccc;}
+
+.time {width:90px;}
+.EventTitle div {position: absolute;}
+.prev_event {left: 10px; }
+.now_event {left: 35%; text-align:center;}
+.next_event {right: 10px;}
+.btn {width: 80px; height: 25px; top: 10px; margin-left: 60px; left:400px; position:relative; }
+
+#username {    
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    left: 720px;
+    top: 80px;
+    font-size:10px;
 }
 
-.bold {
-  font-weight: bold;
-}
+#hidebg { position:absolute;left:0px;top:0px;
+  background-color:#000;
+  width:100%;  
+  min-width:1120px;
+  opacity:0.6;  
+  display:none; 
+  z-Index:2;}
+#hidebox { position:absolute;width:400px;height:300px;top:150px;background-color:#fff;display:none;cursor:pointer;z-Index:3; opacity:1;}
+#content { text-align:center;cursor:pointer;z-Index:1;}
+#closebox {margin: 10px auto; width:60px; text-align: center; background:#00BBFF;}
+#addT {margin: 0px auto; width: 100px; text-align: center; background:#00BBFF;}
+#mySelect1 {margin-left: 60px;width: 100px;}
+#mySelect2 {margin-left: 60px;width: 100px;}
+#contEvnt {margin:25px; width:80%; height:45%;}
+#wEvnt {margin: 0px auto;text-align: center;}
 
-p {
-  max-width: 600px;
-}
-
-form {
-  margin-bottom: 25px;
-  padding: 15px;
-  background-color: cyan;
-  display: inline-block;
-  width: 100%;
-  max-width: 340px;
-  border-radius: 3px;
-}
-
-input {
-  display: block;
-  margin-bottom: 10px;
-  padding: 5px;
-  width: 100%;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-  font-size: 16px;
-}
-
-button {
-  font-size: 16px;
-  border-radius: 3px;
-  background-color: lightgrey;
-  border: 1px solid grey;
-  box-shadow: 2px 2px teal;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: yellow;
-}
-
-button:active {
-  box-shadow: none;
-}
-
-li {
-  margin-bottom: 5px;
-}
-
-footer {
-  margin-top: 50px;
-  padding-top: 25px;
-  border-top: 1px solid lightgrey;
-}
+#infobox {background:#00BBFF; width:300px; height:200px; margin-left:50px; position:absolute;opacity:0.6; padding:20px; border: 1px solid #ccc;}
