@@ -41,7 +41,7 @@ db.serialize(function(){
         console.log('record:', row);
       }
     });
-     console.log('Database "Events" ready to go!');
+     /*console.log('Database "Events" ready to go!');
     db.each('SELECT * from Events', function(err, row) {
       if ( row ) {
         console.log('record1:', row);
