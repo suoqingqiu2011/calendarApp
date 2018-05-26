@@ -1,0 +1,78 @@
+* {margin: 0; padding: 0;}
+body {font-size: 13px;}
+#header {width:100%; min-width:1120px;height:50px; font-family:"Microsoft YaHei"; font-size:25px; text-align:center; padding-top: 6px; border-bottom:1px solid #ccc;
+        background:#17a4eb linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+#calendar {width: 390px; left:2%; margin-right: 70%; position: relative;}
+#calendar h1{margin: 10px auto; position: relative;}
+#calendar .title {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background: #17a4eb;
+    margin: 10px auto;
+    margin-bottom:0;
+}
+
+#evenmnt{position: relative; left: 440px; width: 65%; margin: 0 ; top:-175px;} 
+#evenmnt .EventTitle{
+    position: relative;
+    width: 100%;
+    min-width:556px;
+    height: 50px;
+    line-height: 50px;
+    background: #17a4eb;
+    margin: 10px auto;
+    margin-bottom:0;
+}
+
+.today {top:5%; position: fixed;}
+.return {font-size:20px; background: #00BBFF; margin-left:15px; text-align:center; padding-right: 10px; border: 2px solid #ccc;}
+.txt { position: relative; height: 200px; width: 500px; margin-top:50px; }
+.title div {position: absolute;}
+.prev {left: 10px; }
+.now {left: 35%; text-align:center;}
+.next {right: 10px;}
+.red {background-color:red;}
+.lightblue {background-color:#CCFFFF;}
+.lightred {background-color:#FFc8B4;}
+#inDay {height: 30px;width: 300px; left: 390px; position: relative; top:10px; margin:10px;}
+table {width: 100%; border-collapse: collapse;}
+.EventTab { min-width:556px; }
+table th {border: 1px solid #ccc;}
+table td {text-align: center; border: 1px solid #ccc;}
+
+.time {width:90px;}
+.EventTitle div {position: absolute;}
+.prev_event {left: 10px; }
+.now_event {left: 35%; text-align:center;}
+.next_event {right: 10px;}
+.btn {width: 80px; height: 25px; top: -30px; margin-left: 60px; left:800px; position:relative; }
+
+#username {    
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    left: 720px;
+    top: 80px;
+    font-size:15px;
+}
+
+#hidebg { position:absolute;left:0px;top:0px;
+  background-color:#000;
+  width:100%;  
+  min-width:1120px;
+  opacity:0.6;  
+  display:none; 
+  z-Index:2;}
+#hidebox { position:absolute;width:400px;height:350px;top:100px;background-color:#fff;display:none;cursor:pointer;z-Index:3; opacity:1;}
+#content { text-align:center;cursor:pointer;z-Index:1;}
+#closebox {margin: 10px auto; width:60px; text-align: center; background:#00BBFF;}
+#addT {margin: 0px auto; width: 100px; text-align: center; background:#00BBFF;}
+#mySelect1 {margin-left: 60px;width: 100px;}
+#mySelect2 {margin-left: 60px;width: 100px;}
+#contEvnt {margin:25px; width:80%; height:45%;}
+#titEvnt {margin-left:25px; margin-top:10px; width:80%; height:5%;}
+#wEvnt {margin: 0px auto;text-align: center;}
+
+#infobox {background:#00BBFF; width:300px; height:200px; margin-left:50px; position:absolute;opacity:0.6; padding:20px; border: 1px solid #ccc;}
