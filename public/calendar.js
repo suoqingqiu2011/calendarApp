@@ -147,8 +147,8 @@ window.onload = function () {
                
                //判断最后一行是否全为空
                lastTr();
-               //获得促销信息
-               getPromotion();
+               //获得任务信息
+               getMission()
                flag = true;
            }
        }
@@ -655,10 +655,10 @@ window.onload = function () {
   
       var obj;
       //从服务器获取任务信息
-      function getPromotion() {
+      function getMission() {
            $.request({
                method:"post", //获取方式
-               //url:"promotion.php", //从哪个文件中获取
+               //url:"mission.php", //从哪个文件中获取
                url:"data.json",
                data:"",  //可以传递所有数据
                dataType:"json",
