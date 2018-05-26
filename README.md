@@ -7,6 +7,8 @@ LIU BIN & LI HONGYU
  Dans la page principle, le planning de la semaine courante apparaît sous la forme d’une grande table, avec une colonne par jour. Et découper chaque jour en 48 cases d’une demie heure chacune. La hauteur des cases est fixe. Des boutons permettent de naviguer dans les semaines. Aujourd'hui marque par la couleur orange.
 ## Page Login
 ![xgcalendar screenshot2](img/login.jpg) 
+## Page Regist
+![xgcalendar screenshot2](img/regist.jpg) 
 
 ## Page d'acceuil après login
 ![xgcalendar screenshot2](img/calendar2.jpg)  
