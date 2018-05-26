@@ -23,19 +23,19 @@ var db = new sqlite3.Database(dbFile);
 // if ./.data/sqlite.db does not exist, create it, otherwise print records to console
 db.serialize(function(){
   if (!exists) {
-    db.run('CREATE TABLE Users (dream TEXT)');
+    db.run('CREATE TABLE Users (name TEXT)');
     console.log('New table Users created!');
     
     // insert default dreams
     db.serialize(function() {
-      db.run('INSERT INTO Users (dream) VALUES ("Find and count some sheep"), ("Climb a really tall mountain"), ("Wash the dishes")');
+      db.run('INSERT INTO Users (name) VALUES ("Find and count some sheep"), ("Climb a really tall mountain"), ("Wash the dishes")');
     });
   }
   else {
-    console.log('Database "Users" ready to go!'); 
-    db.each('SELECT * from Users', function(err, row) { console.log(d);
+    console.log('Database "Users" ready to go!');
+    db.each('SELECT * from Users', function(err, row) {
       if ( row ) {
-        console.log('users:',row);
+        console.log('users:', row);
       }
     });
   }
@@ -62,8 +62,8 @@ app.get("/logout", function (request, response) {
 // endpoint to get all the dreams in the database
 // currently this is the only endpoint, ie. adding dreams won't update the database
 // read the sqlite3 module docs and try to add your own! https://www.npmjs.com/package/sqlite3
-app.get('/list', function(request, response) {
-  db.all('SELECT * from Users', function(err, rows) {
+app.get('/getDreams', function(request, response) {
+  db.all('SELECT * from Dreams', function(err, rows) {
     response.send(JSON.stringify(rows));
   });
 });
