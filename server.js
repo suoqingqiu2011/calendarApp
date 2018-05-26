@@ -23,57 +23,47 @@ var db = new sqlite3.Database(dbFile);
 // if ./.data/sqlite.db does not exist, create it, otherwise print records to console
 db.serialize(function(){
   if (!exists) {
-    db.run('CREATE TABLE Users (name TEXT)');
+    db.run('CREATE TABLE Users (dream TEXT)');
     console.log('New table Users created!');
-    /*db.run('CREATE TABLE Events (title TEXT)');
-    console.log('New table Events created!');*/
     
     // insert default dreams
     db.serialize(function() {
-      db.run('INSERT INTO Users (name) VALUES ("Find and count some sheep"), ("Climb a really tall mountain"), ("Wash the dishes")');
-      //db.run('INSERT INTO Events (title) VALUES ("Find and count some sheep"), ("Climb a really tall mountain"), ("Wash the dishes")');
+      db.run('INSERT INTO Users (dream) VALUES ("Find and count some sheep"), ("Climb a really tall mountain"), ("Wash the dishes")');
     });
   }
   else {
-    console.log('Database "Users" ready to go!');
-    db.each('SELECT * from Users', function(err, row) {
+    console.log('Database "Users" ready to go!'); 
+    db.each('SELECT * from Users', function(err, row) { console.log(d);
       if ( row ) {
-        console.log('record:', row);
+        console.log('users:',row);
       }
     });
-     /*console.log('Database "Events" ready to go!');
-    db.each('SELECT * from Events', function(err, row) {
-      if ( row ) {
-        console.log('record1:', row);
-      }
-    });*/
   }
 });
 
-
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
-  response.sendFile(__dirname + '/index.html');
+  response.sendFile('/index.html');
 });
 
 app.get("/login", function (request, response) {
-  response.sendFile(__dirname + '/login.html');
+  response.sendFile('/login.html');
 });
 
 app.get("/signin", function (request, response) {
-  response.sendFile(__dirname + '/signin.html');
+  response.sendFile('/signin.html');
 });
 
 app.get("/logout", function (request, response) {
-  response.sendFile(__dirname + '/index.html');
+  response.sendFile('/index.html');
 });
 
 
 // endpoint to get all the dreams in the database
 // currently this is the only endpoint, ie. adding dreams won't update the database
 // read the sqlite3 module docs and try to add your own! https://www.npmjs.com/package/sqlite3
-app.get('/getDreams', function(request, response) {
-  db.all('SELECT * from Dreams', function(err, rows) {
+app.get('/list', function(request, response) {
+  db.all('SELECT * from Users', function(err, rows) {
     response.send(JSON.stringify(rows));
   });
 });
