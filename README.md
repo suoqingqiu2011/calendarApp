@@ -12,6 +12,7 @@ LIU BIN & LI HONGYU
 
 ## Page d'acceuil après login
 ![xgcalendar screenshot2](img/calendar2.jpg)  
+UserName:a123456 Password:123456  pour le test
 
 ## Ajouter des événements
 ![xgcalendar screenshot2](img/event1.jpg)
