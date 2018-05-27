@@ -79,13 +79,13 @@ app.get("/logout", function (request, response) {
 // currently this is the only endpoint, ie. adding dreams won't update the database
 // read the sqlite3 module docs and try to add your own! https://www.npmjs.com/package/sqlite3
 
-app.get('/list', function(request, response) {   // montrer la liste des utilisateurs
+app.get('/listusers', function(request, response) {   // montrer la liste des utilisateurs
   db.all('SELECT * from Users', function(err, rows) {
     response.send(JSON.stringify(rows));
   });
 });
 
-app.get('/list1', function(request, response) {  // montrer la liste des events
+app.get('/list', function(request, response) {  // montrer la liste des events
   db.all('SELECT * from Events', function(err, rows) {
     response.send(JSON.stringify(rows));
   });
