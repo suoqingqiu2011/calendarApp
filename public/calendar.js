@@ -65,7 +65,7 @@ window.onload = function () {
           } 
       }
   
-       //显示日历
+       //显示日历  // le couche de calendar
        function showDate(year,month) {
            if (false == flag) {
             
@@ -137,23 +137,23 @@ window.onload = function () {
                } else if (12 == month) {
                    nextMonth.innerHTML = 1;
                }
-               //让当前日期显示红色、后面的显示蓝色
+               //让当前日期显示红色、后面的显示蓝色  // colorier la date d'aujourd'hui en rouge et les dates suivants en bleu clair
                showColor();   
-               //给左右月份绑定点击事件
+               //给左右月份绑定点击事件  // cliquer pour passer le mois precedent et le prochain
                monthEvent();
-               //给所有的td绑定点击事件
+               //给所有的td绑定点击事件  // ajouter les clics pour tous les 'td's
                tdClick();
              
                
-               //判断最后一行是否全为空
+               //判断最后一行是否全为空  // confirmer si la dernier ligne dans le calendar est vide, sinon reduire la taille de tableau
                lastTr();
-               //获得任务信息
+               //获得任务信息  //recevoir info de mission a partir de serveur
                getMission()
                flag = true;
            }
        }
   
-        //显示记事录
+        //显示记事录  // le couche des events
         function showEvent(year,month,day) {
               //alert(year+"-"+month+"-"+day);
               var dayNum;
@@ -276,7 +276,7 @@ window.onload = function () {
               
           
               for(var i=0;i<oTdsEvent.length;i++){
-                oTdsEvent[i].onclick=doclick; // 添加任务事件 和 事件段         
+                oTdsEvent[i].onclick=doclick; // 添加任务事件 和 事件段     // cliquer et ajouter des events   
               }    
           
               for(var i=0;i<oTdsEvent.length;i++){ 
@@ -305,14 +305,16 @@ window.onload = function () {
               addEvent.appendChild(closeEvent);   
               oEvenmnt.appendChild(addEvent);
   
-              //给左右月份绑定点击事件
+              //给左右星期绑定点击事件  // cliquer pour passer la semaine precedente et la prochaine
               weekEvent(nowWeek,maxWeek,d1,d2,parseInt(tmp1-1));
-              //让当前日期显示淡蓝色    
+              //让当前日期显示淡红色    // colorier la colonne des events en rouge clair pour aujourd'hui  
               setColor();
-              formTxt();
+          
+              formTxt();  //construire le form d'ajout des events
+          
               returnDay();          
         }
-  
+        //construire le form d'ajout des events
         function formTxt(){
                 var spansEvt = oEvenmnt.getElementsByTagName('span');      
                 
@@ -362,16 +364,20 @@ window.onload = function () {
                 addEvt.appendChild(addTime);
           
         }
-  
-        function doclick(){
+        // colorier des events ou les annuler
+        function doclick(){   //alert(ospansEvnt[5].innerHTML+"--"+this.value);
               if(this.style.backgroundColor==''){
                 show(this.value);     
               }else{  
                 this.style.backgroundColor='';
                 this.className="";
+                //if(thEvnt[this.value].==){  
+                   
+                //}
               }
         }
-  
+        
+        // decouvrir le form d'ajout des events
         function show(value){ //显示隐藏层和弹出层    
             var obj1 = document.getElementById('mySelect1'); 
             var obj2 = document.getElementById('mySelect2'); 
@@ -393,22 +399,22 @@ window.onload = function () {
             waringEvnt.id="wEvnt";
             hidbx.appendChild(waringEvnt);
           
-            var titxt = document.getElementById('titEvnt');
+            var titxt = document.getElementById('titEvnt'); //titre des events
             titxt.value = '';
           
-            var tetxt = document.getElementById('contEvnt');
+            var tetxt = document.getElementById('contEvnt'); //contenu des events
             tetxt.value = '';
           
             addEvt.onclick=function(){
-                var index1 = obj1.selectedIndex;     //序号，取当前选中选项的序号 
+                var index1 = obj1.selectedIndex;     //序号，取当前选中选项的序号 // numero de option dans le select
                 var val1 = obj1.options[index1].value;
 
-                var index2= obj2.selectedIndex;     //序号，取当前选中选项的序号 
+                var index2= obj2.selectedIndex;     //序号，取当前选中选项的序号 // numero de option dans le select
                 var val2 = obj2.options[index2].value;
 
                 var waringsEvt = document.getElementById('wEvnt'); 
 
-                if(parseInt(val1) > parseInt(val2)){
+                if(parseInt(val1) > parseInt(val2)){   // l'heure de debut doit etre inferieur a l'heure de fin
                     waringsEvt.innerHTML="Begining time must be less than finishing time";  
                 }else if(tetxt.value == ""){
                     waringsEvt.innerHTML="Please insert your planning";       
@@ -427,19 +433,20 @@ window.onload = function () {
                 }
             }; 
         }
-
+        //cacher le form d'ajout des events
         function hide(){ //去除隐藏层和弹出层
             document.getElementById("hidebg").style.display = "none";
             document.getElementById("hidebox").style.display = "none";
         }
 
+        // confirmer le nb de chaque mois
         function num_day(month) {
             var dayNum ;
             if (1 == month || 3 == month || 5 == month || 7 == month || 8 == month || 10 == month || 12 == month) {
                    dayNum = 31;
                } else if (4 == month || 6 == month || 9 == month || 11 == month) {
                    dayNum = 30;
-               } else if (2 == month && isLeapYear(year)) {
+               } else if (2 == month && isLeapYear(year)) {  //confirmer s'il soit l'année bissextile
                    dayNum = 29;
                } else {
                    dayNum = 28;
@@ -447,7 +454,7 @@ window.onload = function () {
            return dayNum;
         }
   
-       //最后一行如果全部为空就将其隐藏
+       //最后一行如果全部为空就将其隐藏  // confirmer si la dernier ligne dans le calendar est vide, sinon reduire la taille de tableau
     
        function lastTr() {
            //查找最后一行的所有td
@@ -466,11 +473,8 @@ window.onload = function () {
            }
        }
   
-       /* var txt = document.createElement('textarea');
-        txt.className = 'txt';  
-        oEvenmnt.appendChild(txt);*/
   
-       //给所有的td绑定点击事件
+       //给所有的td绑定点击事件  // ajouter les clics pour tous les 'td's
        function tdClick() {    
            for (var i=0; i<oTds.length; i++) {
                
@@ -482,18 +486,18 @@ window.onload = function () {
                         var date = this.innerHTML;                     
                         oInput.value = 'Check events '+ year +'-'+month+'-'+date;
                         flag = false;          
-                        //txt.innerHTML = '报效祖国 人人有责'+date;
+                        
                         oEvenmnt.innerHTML = '';
                         showEvent(parseInt(year),parseInt(month),parseInt(date));
                     } else {
-                        alert('您只能选择红色或淡蓝色区域，白色区域已经过期');
+                        alert('You can just choose the areas on red et light blue , the dates of parts on white has already passed.');
                     }
                }
            }
        }
   
   
-       //当前日期显示红色、后面的显示黄色
+       //当前日期显示红色、后面的显示淡蓝色  // colorier la date d'aujourd'hui en rouge et les dates suivants en bleu clair
        function showColor() {
            //当前的日期
            var oday = new Date().getDate();
@@ -532,7 +536,7 @@ window.onload = function () {
          
        }
 
-      //当前日期显示蓝色
+      //当前日期显示淡红色  // colorier la colonne des events en rouge clair pour aujourd'hui  
        function setColor() {
            //当前的日期
            var oday = new Date().getDate();
@@ -558,7 +562,7 @@ window.onload = function () {
                }
            }
        }
-      //记事本返回今天
+      //记事本返回今天  // retourner a aujourd'hui
       var returnBut;
       function returnDay(){   
            var oday = new Date().getDate();
@@ -577,28 +581,28 @@ window.onload = function () {
       }
   
   
-      //给左右星期绑定点击事件
+      //给左右星期绑定点击事件   // cliquer pour passer la semaine precedente et la prochaine
        function weekEvent(nowWeek,maxWeek,d1,d2,s) {
-           //向左的星期div
+           //向左的星期div   // passer a la dernier semaine
            prevMonthEvnt.parentNode.onclick = function () {  
                
                flag = false;
                oEvenmnt.innerHTML = '';
                if (12 == prevMonthEvnt.innerHTML && nowWeek>=1 && nowWeek<=2) { 
-                   showEvent(year-=1,12,parseInt(nowDayEvnt.innerHTML)+num_day(12)-7);
+                   showEvent(year-=1,12,parseInt(nowDayEvnt.innerHTML)+num_day(12)-7);  //passer a l'annee derniere
                }else if(nowWeek >1 && parseInt(nowDayEvnt.innerHTML)-7 >0){
                    showEvent(year,parseInt(nowMonthEvnt.innerHTML),parseInt(nowDayEvnt.innerHTML)-7);
                }else{     
                    showEvent(year,parseInt(nowMonthEvnt.innerHTML)-1,parseInt(nowDayEvnt.innerHTML)+num_day(parseInt(nowMonthEvnt.innerHTML)-1)-7);                 
                }
            }
-           //向右的星期div
+           //向右的星期div  // passer a la prochaine semaine
            nextMonthEvnt.parentNode.onclick = function () {
                
                flag = false;
                oEvenmnt.innerHTML = ''; 
                if (1 == nextMonthEvnt.innerHTML && nowWeek >=maxWeek-1) {    //alert(nowWeek+"-"+maxWeek);
-                   if(parseInt(nowDayEvnt.innerHTML)+7<= num_day(12)){ 
+                   if(parseInt(nowDayEvnt.innerHTML)+7<= num_day(12)){    // pour passer a l'annee prochaine
                        showEvent(year+=1,1,parseInt(nowDayEvnt.innerHTML)+7);
                    }else if(parseInt(nowDayEvnt.innerHTML)+7> num_day(12)){  
                        showEvent(year+=1,1,parseInt(nowDayEvnt.innerHTML)+7-num_day(12));
@@ -620,9 +624,9 @@ window.onload = function () {
        }
    
   
-   //给左右月份绑定点击事件
+   //给左右月份绑定点击事件  // cliquer pour passer le mois precedent et le prochain
       function monthEvent() {
-           //向左的月份div
+           //向左的月份div  //passer au dernier mois
             prevMonth.parentNode.onclick = function () {
                
                flag = false;
@@ -633,7 +637,7 @@ window.onload = function () {
                    showDate(year,parseInt(prevMonth.innerHTML));
                }
            }
-           //向左的月份div
+           //向左的月份div  //passer au prochain mois
             nextMonth.parentNode.onclick = function () {
               
                flag = false;
@@ -646,7 +650,7 @@ window.onload = function () {
            }
        }
   
-       //判断是否是闰年
+       //判断是否是闰年  //confirmer s'il soit l'année bissextile
        function isLeapYear(year) {
            if (0 == year%100 && 0 == year%400) {
                return true;
@@ -663,13 +667,13 @@ window.onload = function () {
       }
   
       var obj;
-      //从服务器获取任务信息
+      //从服务器获取任务信息  //recevoir info de mission a partir de serveur
       function getMission() {
            $.request({
-               method:"post", //获取方式
-               //url:"mission.php", //从哪个文件中获取
+               method:"post", //获取方式  //methode post
+               //url:"mission.php", //从哪个文件中获取  // prendre des donnees dans fichier php
                url:"data.json",
-               data:"",  //可以传递所有数据
+               data:"",  //可以传递所有数据  // recuperer toutes les donnees
                dataType:"json",
                callback:function (res) { 
                obj= evil(res);
