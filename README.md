@@ -44,4 +44,5 @@ Les événements sont représentés avec la couleur gris pour montrer les plages
 * Dans la page principale(Route /): clique sur le table des événements, permettant d’ajouter et d’éliminer un évènement.
 * * Confirmer toutes les données dans la console
   * `pnpm install sqlites3` si neccesaire
+  * si on va suprimer la database et rétabliser une nouvelle, taper `.data/rm sqlite.db` et le code refait une autre    automatiquement.
 
