@@ -40,7 +40,8 @@ Les événements sont représentés avec la couleur gris pour montrer les plages
 * Route /signin : permettant de créer un nouvel utilisateur.
 * Route /login : permettant de se connecter. Redirige vers / après un login réussi.
 * Route /logout : permettant de se déconnecter. Redirige vers / après un logout réussi.
-* Route /liste : renvoyant la liste des événements au format JSON (ou XML, ou autre), pour un traitement chez le client. 
+* Route /list : renvoyant la liste des événements au format JSON (ou XML, ou autre), pour un traitement chez le client.
+* Route /listusers : renvoyant la liste des événements au format JSON (ou XML, ou autre)
 * Dans la page principale(Route /): clique sur le table des événements, permettant d’ajouter et d’éliminer un évènement.
 * * Confirmer toutes les données dans la console
   * `pnpm install sqlites3` si neccesaire
