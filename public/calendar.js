@@ -370,10 +370,13 @@ window.onload = function () {
                 show(this.value);     
               }else{  
                 this.style.backgroundColor='';
-                this.className="";
-                //if(thEvnt[this.value].==){  
-                   
-                //}
+                
+                if(ospansEvnt[this.value+4].innerHTML == days){  
+                   this.className="lightred";   
+                }else{   
+                  //alert(ospansEvnt[this.value+3].innerHTML);
+                   this.className="";
+                }
               }
         }
         
