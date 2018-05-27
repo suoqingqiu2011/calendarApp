@@ -370,7 +370,7 @@ window.onload = function () {
                 show(this.value);     
               }else{  
                 this.style.backgroundColor='';
-                
+                this.innerHTML='';
                 if(ospansEvnt[this.value+4].innerHTML == days){  
                    this.className="lightred";   
                 }else{   
