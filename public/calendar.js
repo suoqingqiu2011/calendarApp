@@ -214,7 +214,8 @@ window.onload = function () {
               d1=dayNum1-week+1;
                
                //alert(nowWeek+"~"+week);
-              var tmp= (day+week)%7;  var tmp1=(day+week)%7; 
+              var tmp= (day+week)%7;  
+              var tmp1=(day+week)%7; 
               if(tmp==0){
                 tmp=7;
               }                                        
@@ -306,7 +307,8 @@ window.onload = function () {
               oEvenmnt.appendChild(addEvent);
   
               //给左右星期绑定点击事件  // cliquer pour passer la semaine precedente et la prochaine
-              weekEvent(nowWeek,maxWeek,d1,d2,parseInt(tmp1-1));
+              
+              weekEvent(nowWeek,maxWeek,d1,d2,parseInt(tmp1-1));     //alert(tmp1-1);
               //让当前日期显示淡红色    // colorier la colonne des events en rouge clair pour aujourd'hui  
               setColor();
           
@@ -606,7 +608,7 @@ window.onload = function () {
                oEvenmnt.innerHTML = ''; 
                if (1 == nextMonthEvnt.innerHTML && nowWeek >=maxWeek-1) {    //alert(nowWeek+"-"+maxWeek);
                    if(parseInt(nowDayEvnt.innerHTML)+7<= num_day(12)){    // pour passer a l'annee prochaine
-                       showEvent(year+=1,1,parseInt(nowDayEvnt.innerHTML)+7);
+                       showEvent(year+=1,1,parseInt(nowDayEvnt.innerHTML)+7);    
                    }else if(parseInt(nowDayEvnt.innerHTML)+7> num_day(12)){  
                        showEvent(year+=1,1,parseInt(nowDayEvnt.innerHTML)+7-num_day(12));
                    }else if(parseInt(nowDayEvnt.innerHTML)==num_day(12)){ 
@@ -621,7 +623,7 @@ window.onload = function () {
                }else if(parseInt(nowDayEvnt.innerHTML)==num_day(parseInt(nowMonthEvnt.innerHTML))){   //alert("3");
                    showEvent(year,parseInt(nowMonthEvnt.innerHTML)+1,7);
                }else {    
-                   showEvent(year,parseInt(nowMonthEvnt.innerHTML)+1,parseInt(s+1));
+                   showEvent(year,parseInt(nowMonthEvnt.innerHTML)+1,parseInt(7-(num_day(parseInt(nowMonthEvnt.innerHTML))-nowDayEvnt.innerHTML)));    alert("4");
                }
            }
        }
