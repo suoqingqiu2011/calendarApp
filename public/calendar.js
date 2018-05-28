@@ -623,7 +623,7 @@ window.onload = function () {
                }else if(parseInt(nowDayEvnt.innerHTML)==num_day(parseInt(nowMonthEvnt.innerHTML))){   //alert("3");
                    showEvent(year,parseInt(nowMonthEvnt.innerHTML)+1,7);
                }else {    
-                   showEvent(year,parseInt(nowMonthEvnt.innerHTML)+1,parseInt(7-(num_day(parseInt(nowMonthEvnt.innerHTML))-nowDayEvnt.innerHTML)));    alert("4");
+                   showEvent(year,parseInt(nowMonthEvnt.innerHTML)+1,parseInt(7-(num_day(parseInt(nowMonthEvnt.innerHTML))-nowDayEvnt.innerHTML)));    //alert("4");
                }
            }
        }
