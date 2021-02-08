@@ -2,6 +2,8 @@ Projet AWS Calendar
 ========================================
 LIU BIN & LI HONGYU
 
+projet: https://calenda.glitch.me
+
 ## Page d'acceuil
 ![xgcalendar screenshot1](img/calendar1.jpg) 
  Dans la page principle, le planning de la semaine courante apparaît sous la forme d’une grande table, avec une colonne par jour. Et découper chaque jour en 48 cases d’une demie heure chacune. La hauteur des cases est fixe. Des boutons permettent de naviguer dans les semaines. Aujourd'hui marque par la couleur orange. Si on clique sur une date dans le calendrier, il montrera la semaine dans la table des événements. En plus, le button 'return' est pour retourner à la semaine qui conserne la date d'aujourd'hui.
